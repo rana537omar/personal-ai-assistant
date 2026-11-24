@@ -1,0 +1,43 @@
+{
+  "name": "personal-ai-assistant",
+  "version": "0.1.0",
+  "description": "Open-source personal AI assistant that runs on your own machine with local models. Talk to it from the web, the terminal, Telegram, Discord, Slack, WhatsApp, SMS or a phone call. It remembers you, runs scheduled tasks, researches the web, drives a browser and uses your computer — with your approval.",
+  "type": "module",
+  "license": "MIT",
+  "main": "src/server.js",
+  "bin": {
+    "assistant": "bin/assistant.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "chat": "node --disable-warning=ExperimentalWarning bin/assistant.js chat",
+    "status": "node bin/assistant.js status",
+    "doctor": "node --disable-warning=ExperimentalWarning bin/assistant.js doctor",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "ai-assistant",
+    "personal-assistant",
+    "local-llm",
+    "ollama",
+    "agent",
+    "self-hosted",
+    "telegram-bot",
+    "discord-bot",
+    "slack-bot",
+    "whatsapp",
+    "privacy"
+  ],
+  "files": [
+    "bin",
+    "src",
+    "public",
+    "skills",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ]
+}

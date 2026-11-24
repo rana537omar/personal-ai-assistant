@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal AI Assistant</title>
+  <meta name="description" content="Your open-source personal AI assistant, running on your own computer.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="nav" id="nav">
+      <div class="brand">
+        <div class="brand-mark" id="brandMark">A</div>
+        <div style="min-width:0">
+          <div class="brand-name" id="brandName">Assistant</div>
+          <div class="brand-sub">Personal AI · local</div>
+        </div>
+      </div>
+      <a class="item" href="#/chat" data-view="chat"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.9A8.5 8.5 0 1 1 21 12Z"/></svg>Chat</a>
+      <a class="item" href="#/focus" data-view="focus"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6"/></svg>Focus</a>
+      <a class="item" href="#/memory" data-view="memory"><svg class="i" viewBox="0 0 24 24"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.5 3.5 0 0 0 4 14a3.5 3.5 0 0 0 3.5 5H9V4.5Zm6 0a3 3 0 0 1 3 3v.3A3.5 3.5 0 0 1 20 14a3.5 3.5 0 0 1-3.5 5H15V4.5Z"/><path d="M9 4.5h6"/><path d="M9 19h6"/></svg>Memory</a>
+      <a class="item" href="#/skills" data-view="skills"><svg class="i" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6.5l-1 8 8.5-11h-6.5l1-8Z"/></svg>Skills</a>
+      <a class="item" href="#/schedules" data-view="schedules"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Schedules</a>
+      <a class="item" href="#/channels" data-view="channels"><svg class="i" viewBox="0 0 24 24"><path d="M4.9 16.2a8.5 8.5 0 0 1 0-8.4"/><path d="M19.1 7.8a8.5 8.5 0 0 1 0 8.4"/><path d="M8 14a4.5 4.5 0 0 1 0-4"/><path d="M16 10a4.5 4.5 0 0 1 0 4"/><circle cx="12" cy="12" r="1.5"/></svg>Channels<span class="count hidden" id="pairCount"></span></a>
+      <a class="item" href="#/activity" data-view="activity"><svg class="i" viewBox="0 0 24 24"><path d="M3 12h4l3-7.5 4 15 3-7.5h4"/></svg>Activity<span class="count hidden" id="approvalCount"></span></a>
+      <a class="item" href="#/settings" data-view="settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 12h3M11 12h9M4 17h12M20 17h0"/><circle cx="16" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="18" cy="17" r="2"/></svg>Settings</a>
+      <div class="nav-foot">
+        <div class="model-pill" id="modelPill" title="Model status — open Settings"><span class="dot" id="modelDot"></span><span style="min-width:0;display:flex;flex-direction:column"><b id="modelName">Checking…</b><span id="modelSub">local model</span></span></div>
+        <div class="row" style="gap:6px">
+          <button class="btn ghost sm grow" id="themeBtn" title="Toggle light / dark"><svg class="i sm" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>Theme</button>
+          <a class="btn ghost sm grow" href="https://github.com/rana537omar/personal-ai-assistant#readme" id="docsLink" target="_blank" rel="noopener" title="Documentation"><svg class="i sm" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/></svg>Docs</a>
+        </div>
+      </div>
+    </aside>
+    <button class="mobile-menu" id="mobileMenu" title="Menu" aria-label="Open menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <main id="view"></main>
+  </div>
+  <div class="tray" id="tray"></div>
+  <div class="toasts" id="toasts"></div>
+  <div id="modalRoot"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
